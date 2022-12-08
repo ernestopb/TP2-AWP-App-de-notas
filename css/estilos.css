@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: beige;
+}
+
+.contenedor{
+    margin: 45px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 245px);
+    gap: 10px;
+}
+
+.contenedor li{
+    height: 220px;
+    list-style: none;
+    background: white;
+    border-radius: 4px;
+    padding: 12px 18px 18px;
+}
+
+.contenedor .nota{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.agregar-caja{
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.agregar-caja, .icono, .contenido-bottom, .modal, header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.agregar-caja .icono {
+    margin-top: 35px;
+    border: 3px solid ;
+    height: 65px;
+    width: 65px;
+    color: rgb(0, 0, 0);
+    font-size: 38px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.agregar-caja p{
+    font-weight: 550;
+    margin-top: 20px;
+}
+
+.nota p{
+    font-size: 24px;
+    font-weight: 550;
+}
+
+.nota span{
+    display: block;
+    margin-top: 5px;
+    color: darkslategray;
+    font-size: 14px;
+}
+
+.nota .contenido-bottom{
+    padding-top: 5px;
+}
+
+.contenido-bottom span{
+    color: darkslategray;
+    
+    font-size: 12px;
+}
+
+.contenido-bottom .borrar i{
+    color: red;
+    font-size: 12px;
+    cursor: pointer;
+    font-style: normal;
+}
+
+.caja-modal{
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.caja-modal .modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    max-width: 420px;
+    width: 100%;
+    justify-content: center;
+}
+
+.modal .contenido{
+    width: calc(100% - 15px);
+    border-radius: 6px;
+    background: white;
+}
+
+.modal .contenido header{
+    padding: 14px 24px;
+    border-bottom: 1px solid wheat;
+}
+
+.contenido header p{
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.contenido header i{
+    color: gray;
+    cursor: pointer;
+    font-size: 22px;
+    font-style: normal;
+}
+
+.contenido form{
+    margin: 16px 26px 34px;
+}
+
+.contenido form input{
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    padding: 0 14px;
+}
+
+.contenido form textarea{
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    padding: 0 14px;
+}
+
+.contenido form .fila{
+    margin-bottom: 18px;
+}
+
+.contenido .fila label{
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contenido form textarea{
+    height: 140px;
+    resize: none;
+    padding: 6px 14px;
+}
+
+.contenido form button{
+    width: 100%;
+    height: 40px;
+    background: beige;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.caja-modal, .caja-modal .modal{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.caja-modal.show, .caja-modal.show .modal{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nota .detalles{
+    max-height: 140px;
+    overflow-y: auto;
+}
